@@ -16,7 +16,8 @@ def setup():
     enemyTeam = 2
     player = Player(width/2, height/2, playerTeam)
     
-    sprites.append(player)
+    sprites.append(Player(250, 250, playerTeam))
+    sprites.append(Enemy(50, 50, enemyTeam))
     sprites.append(Raindrop(25, 25, enemyTeam))
     sprites.append(Raindrop(75, 75, enemyTeam))
     sprites.append(Raindrop(125, 125, enemyTeam))
@@ -29,6 +30,7 @@ def setup():
     sprites.append(Raindrop(475, 475, enemyTeam))
     sprites.append(JiggleBot(random(0,500), random(0,200), enemyTeam))
     sprites.append(ScreenSaverBot(width/2, 500, enemyTeam))
+    
                                       
 def draw():
     global player, sprites
