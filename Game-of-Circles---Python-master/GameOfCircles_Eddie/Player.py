@@ -1,7 +1,8 @@
-from SpriteManager import sprites
+import SpriteManager
 from Bullet import Bullet
+from Sprite import Sprite
 
-class Player:
+class Player(Sprite):
     
     # instance variables
     left = False
@@ -11,18 +12,7 @@ class Player:
     speed = 5
     diameter = 50
     c = color(255,0,0)
-    
-    # constructor
-    def __init__(self, x, y, team):
-        self.x = x
-        self.y = y
-        self.team = team
-        
-    # instance methods
-    def display(self):
-        fill(self.c)
-        ellipse(self.x, self.y, self.diameter, self.diameter)
-        
+            
     def move(self):
         if self.left:
             self.x -= self.speed
@@ -34,17 +24,10 @@ class Player:
             self.y += self.speed
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
-    
-    def animate(self):
-        self.display()
-        self.move()
-        
-    def fire(self):
-        print("FIRE")
         
     def keyDown(self):
         if key == 'f' or key == 'F':
-            sprites.append(Bullet(self.x, self.y, PVector(0, -10), self.team))
+            SpriteManager.spawn(Bullet(self.x, self.y, PVector(0, -10), self.team))
     
         if keyCode == LEFT:
             self.left = True
