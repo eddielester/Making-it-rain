@@ -5,7 +5,7 @@ playerTeam = 1
 enemyTeam = 2
 
 def setPlayer(PlayerInstance):
-    global power
+    global player
     player = PlayerInstance
     spawn(player)
     
@@ -14,7 +14,7 @@ def getPlayer():
     return player
 
 def destroy(target):
-    destroy.append(target)
+    destroyed.append(target)
     
 def spawn(obj):
     sprites.append(obj)

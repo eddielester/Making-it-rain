@@ -1,5 +1,4 @@
 from Sprite import Sprite
-
 class Bullet(Sprite):
     
     diameter = 10
