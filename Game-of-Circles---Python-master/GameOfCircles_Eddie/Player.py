@@ -12,6 +12,9 @@ class Player(Sprite):
     speed = 5
     diameter = 50
     c = color(255,0,0)
+    
+    def handleCollision(self):
+        pass
             
     def move(self):
         if self.left:

@@ -29,8 +29,8 @@ class Gunna(Sprite):
         xComp = target.x - self.x
         yComp = target.y - self.y
         d = ((self.x - target.x)**2 + (self.y  - target.y)**2)**.5
-        xVector = xComp / 2 *.1
-        yVector = yComp / 2 *.1
+        xVector = xComp / 2 *.05
+        yVector = yComp / 2 *.05
         return PVector(xVector, yVector)
         return PVector(0, 10)
     
@@ -38,17 +38,14 @@ class Gunna(Sprite):
     
     def fire(self, vector):
         global go, mark, wait
-        SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
         
         if(millis() - self.mark > self.wait):
             self.go = not self.go
             self.mark = millis()
             
         if(self.go):
-            self.fire(vector)
-            
-        if(self.go):
             self.go = False
+            SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
         
     
         

@@ -1,5 +1,6 @@
 from Sprite import Sprite
 import SpriteManager
+
 class Raindrop(Sprite):
     
     speed = 8
