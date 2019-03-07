@@ -3,7 +3,7 @@ import SpriteManager
 
 class Raindrop(Sprite):
     
-    speed = 8
+    speed = 5
     diameter = 30
     c = color(0,0,255)
     

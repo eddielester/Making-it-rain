@@ -2,8 +2,8 @@ from Sprite import Sprite
 
 class ScreenSaverBot(Sprite):
     
-    speedX = 8
-    speedY = 8
+    speedX = 5
+    speedY = 5
     diameter = 30
     c = color(200,200,255)
     
