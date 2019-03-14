@@ -1,8 +1,10 @@
+
 import SpriteManager
 class Sprite(object):
     team = 2
-    diameter = 30
+    diameter = 40
     c = color(255)
+    armour = 3
 
     def __init__(self, x, y, team):
         self.x = x

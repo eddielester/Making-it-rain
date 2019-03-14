@@ -6,7 +6,7 @@ import SpriteManager
 class Gunna(Sprite):
     
     speed = 5
-    diameter = 30
+    diameter = 50
     c = color(0,0,255)
     
     mark = 0
@@ -29,8 +29,8 @@ class Gunna(Sprite):
         xComp = target.x - self.x
         yComp = target.y - self.y
         d = ((self.x - target.x)**2 + (self.y  - target.y)**2)**.5
-        xVector = xComp / 2 *.035
-        yVector = yComp / 2 *.035
+        xVector = xComp / 2 *.025
+        yVector = yComp / 2 *.025
         return PVector(xVector, yVector)
         return PVector(0, 10)
     

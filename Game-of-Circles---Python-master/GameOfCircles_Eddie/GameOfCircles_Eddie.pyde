@@ -6,13 +6,14 @@ from SpriteManager import sprites
 from Raindrop import Raindrop
 from JiggleBot import JiggleBot
 from ScreenSaverBot import ScreenSaverBot
+from Armored import Armored
 import SpriteManager
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
     
     global player, sprites
-    size(500, 500)
+    size(1000, 1000)
     playerTeam = 1
     enemyTeam = 2
     player = Player(width/2, height-100, playerTeam)
@@ -20,7 +21,8 @@ def setup():
     SpriteManager.spawn(JiggleBot(200, 50, 2))
     SpriteManager.spawn(Gunna(200, 50, 2))
     SpriteManager.spawn(Raindrop(75, 0, 2))
-    SpriteManager.spawn(ScreenSaverBot(500, 40, 2))
+    SpriteManager.spawn(ScreenSaverBot(500, 0, 2))
+    
     
 def draw():
     global player, sprites
@@ -33,7 +35,8 @@ def draw():
     checkCollisions()
     
 def checkCollisions():
-    global sprites
+    global sprites, armour
+    armour = 3
     for a in sprites:
         for b in sprites:
             if a.team != b.team:
